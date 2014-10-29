@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Mini-Twitter</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	</head>
+	<body ng-app="miniTwitterApp">
+		<div class="well">
+			<div class="container">
+				<div class="header">
+					<h1 class="title">Jorge's Mini-Twitter</h1>
+				</div>
+				<div>
+					Find the source  code in <a href="https://github.com/JaMedina/mini-twitter-challenge.git">here</a><br/>
+					Find a command line client <a href="https://github.com/JaMedina/mini-twitter-client">here</a>
+				</div>
+			</div>
+            <div ng-view=""></div>
+        </div>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	    
+		
+		<script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+		
+		<script src="scripts/app.js"></script>
+		<script src="scripts/main/mainController.js"></script>
+		<script src="scripts/timeline/timeLineController.js"></script>
+	</body>
+</html>

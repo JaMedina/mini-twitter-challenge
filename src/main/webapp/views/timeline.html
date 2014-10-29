@@ -1,0 +1,82 @@
+<div>
+	<span>You are logged in as <b style="font-size: 20px;">{{session.username}}</b></span>
+	<button class="btn btn-info" ng-click="logout()" style="width: 100%;">
+        <span>Logout</span>
+    </button>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="modal-header">
+                <h2 class="modal-title">Tweets</h2>
+            </div>
+            <form name="tweetForm" role="form">
+				<div class="modal-body">
+				    <div class="form-group">
+				        <input type="text" class="form-control" name="message" ng-model="tweet.message" ng-maxlength="140" required placeholder="What is on your mind?">
+				    </div>
+		            <button type="submit" class="btn btn-sm btn-info" ng-click="sendTweet()" ng-disabled="tweetForm.$invalid">
+		                <span>&nbsp;Tweet</span>
+		            </button>
+		        </div>
+    		</form>
+    		<form role="form">
+    			<div class="modal-body">
+	    			<div class="form-group">
+						<input type="text" class="form-control" name="message" ng-model="search" ng-maxlength="140" placeholder="Filter your tweets">
+		  			</div>
+		  			<button class="btn btn-sm btn-info" ng-click="refreshTweets()">
+		                <span>&nbsp;Refresh</span>
+		            </button>
+		        </div>
+	        </form>
+			<table class="table table-condensed table-striped table-bordered table-responsive">
+		        <tr ng-repeat="tweet in tweets">
+		            <td>AuthorId: {{tweet.authorId}}</td>
+		            <td>{{tweet.message}}</td>
+	        	</tr>
+		    </table>
+		 </div>
+		 <div class="col-md-3">
+			<div class="modal-header">
+                   <h2 class="modal-title">Following</h2>
+            </div>
+			<table class="table table-condensed table-striped table-bordered table-responsive">
+		        <tr ng-repeat="followee in following">
+		        	<td>ID: {{followee.id}}</td>
+		            <td>User: {{followee.name}}</td>
+		            <td>Username: {{followee.username}}</td>
+		            <td>
+		                <button ng-click="unFollow(followee)" class="btn btn-default btn-xs btn-danger">Unfollow</button>
+	            	</td>
+	        	</tr>
+		    </table>
+		 </div>
+		 <div class="col-md-3">
+			<div class="modal-header">
+                   <h2 class="modal-title">Followers</h2>
+                   <button ng-click="refreshFollowers()" class="btn btn-default btn-xs btn-info">Refresh</button>
+            </div>
+			<table class="table table-condensed table-striped table-bordered table-responsive">
+		        <tr ng-repeat="follower in followers">
+		            <td>User: {{follower.name}}</td>
+		            <td>Username: {{follower.username}}</td>
+	        	</tr>
+		    </table>
+		 </div>
+		 <div class="col-md-3">
+			<div class="modal-header">
+                   <h2 class="modal-title">Who to Follow</h2>
+                   <button ng-click="refreshUsers()" class="btn btn-default btn-xs btn-info">Refresh</button>
+            </div>
+			<table class="table table-condensed table-striped table-bordered table-responsive">
+		        <tr ng-repeat="user in users">
+		            <td>User: {{user.name}}</td>
+		            <td>Username: {{user.username}}</td>
+		            <td>
+		                <button ng-click="follow(user)" class="btn btn-default btn-xs btn-success">Follow</button>
+	            	</td>
+	        	</tr>
+		    </table>
+		 </div>
+	</div>
+</div>
+
