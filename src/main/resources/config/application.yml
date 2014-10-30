@@ -6,18 +6,6 @@ spring:
         serverName: 
         username: twitter
         password: twitter
-#        dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-#        url: jdbc:mysql://127.11.77.130:3306/jbossews
-#        databaseName: jbossews
-#        serverName: 
-#        username: adminunfkuKQ
-#        password: TzXp-yQf-GuP
-#        dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-#        url: jdbc:mysql://127.2.220.2:3306/minitwitter
-#        databaseName: minitwitter
-#        serverName: 
-#        username: adminfRc8Wjp
-#        password: vkJ-dd8gyxv9
 
     jpa:
         database-platform: org.hibernate.dialect.H2Dialect
